@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  const username = '1';
+  const password = '123';
+  const xhr = new XMLHttpRequest();
+xhr.open('GET', `http://localhost:5000/api/expenses/findAll`);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === XMLHttpRequest.DONE) {
+    if (xhr.status === 200) {
+      // 处理成功响应的数据
+      console.log(xhr.responseText);
+    } else {
+      // 处理请求错误
+      console.error('Error:', xhr.status);
+    }
+  }
+};
+xhr.send();
+
+</script>
+
+</body>
+</html>
